@@ -1,38 +1,45 @@
-.App {
-  text-align: center;
+*{
+    background-color: rgb(163, 228, 231);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app {
+  padding: 40px;
+  background-color: rgb(163, 228, 231);
+  font-style: italic;
+  font-weight: 500;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#text {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.to_do {
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  display: flex;
+  font-size: 18px;
+  justify-content: space-between;
+  font-weight: 400;
 }
 
-.App-link {
-  color: #61dafb;
+.text-center {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.list {
+  text-align: center;
+  font-size: large;
+  font-style: italic;
+  font-weight: bold;
+  padding-top: 15px;
+}
+
+#mybutton {
+  background-color: brown;
+  font-size: 15px;
+}
+
+#addtext {
+  font-size: 15px;
+  color: rgb(36, 35, 35);
+  text-align: center;
 }
