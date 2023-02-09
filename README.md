@@ -2,11 +2,11 @@
 Project by https://github.com/Jeann11
 
 # REQUIREMENTS 🛠️
-Responsive design
-React 
-Bootstrap
-HTML
-CSS
+- Responsive design
+- React 
+- Bootstrap
+- HTML
+- CSS
 
 # GOALS 📝
 In our life, we ​​must have an organization to be able to make the most of time. And for this reason we need to make a list of tasks to reach our objectives in a more optimal way.
