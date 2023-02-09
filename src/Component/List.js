@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Form, Stack } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function List ({ addTodo }) {
     const [value, setValue] = React.useState("");
@@ -13,7 +13,7 @@ function List ({ addTodo }) {
     };
   
     return (
-      <Form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit} className="w-75">
         <Form.Group>
           <Form.Label id="addtext"><b>Add Items </b></Form.Label>
           <Stack direction="horizontal" gap={3}>

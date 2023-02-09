@@ -3,15 +3,15 @@ import "./App.css";
 import Todo from "./Component/Todo";
 import List from "./Component/List";
 import Card from 'react-bootstrap/Card';
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 function App() {
   const [todos, setTodos] = React.useState([
-   /*  {
-      text: "It's an example",
-      isDone: false
-    } */
+    /*  {
+       text: "It's an example",
+       isDone: false
+     }  */
   ]);
 
   const addTodo = text => {
@@ -36,8 +36,10 @@ function App() {
       <div className="container" key="value">
         <h1 className="text-center" >Shopping List</h1>
         <p className="by">by @Jeann11</p>
-        <List addTodo={addTodo} />
-        <div>
+        <div className="d-flex justify-content-center">
+          <List addTodo={addTodo} />
+        </div>
+        <div class="card" className="w-50">
           {todos.map((todos, index) => (
             <Card>
               <Card.Body>

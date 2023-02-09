@@ -41,6 +41,12 @@ body {
   padding-top: 15px;
   color: purple;
 }
+.card {
+ display: flex;
+ position: absolute;
+ width: 62vw;
+ transform: translate(16%);
+}
 
 #mybutton {
   background-color: purple;
