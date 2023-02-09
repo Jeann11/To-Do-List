@@ -33,7 +33,7 @@ function FormTodo({ addTodo }) {
       <Form.Group>
         <Form.Label id="addtext"><b>Add Items </b></Form.Label>
         <Stack direction="horizontal" gap={3}>
-          <Form.Control type="text" value={value} onChange={e => setValue(e.target.value)} placeholder="Add items here" />
+          <Form.Control type="text" value={value} onChange={e => setValue(e.target.value)} placeholder="Add items here ✎" />
           <Button id="mybutton" variant="primary" type="submit">
             Add
           </Button>
