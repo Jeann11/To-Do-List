@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
-import  Form  from 'react-bootstrap/Form';
+import Form from 'react-bootstrap/Form';
 import Stack from 'react-bootstrap/Stack'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -23,7 +23,7 @@ function FormTodo({ addTodo }) {
 
   const handleSubmit = e => {
     e.preventDefault();
-    if (!value   ) return;
+    if (!value) return;
     addTodo(value);
     setValue("");
   };
@@ -31,25 +31,25 @@ function FormTodo({ addTodo }) {
   return (
     <Form onSubmit={handleSubmit}>
       <Form.Group>
-        <Form.Label id="addtext"><b>Add Items</b></Form.Label>
+        <Form.Label id="addtext"><b>Add Items </b></Form.Label>
         <Stack direction="horizontal" gap={3}>
-        <Form.Control type="text" value={value} onChange={e => setValue(e.target.value)} placeholder="Add your item here" />
-     <Button id="mybutton" variant="primary" type="submit">
-        Add
-      </Button>
-      </Stack>
+          <Form.Control type="text" value={value} onChange={e => setValue(e.target.value)} placeholder="Add items here" />
+          <Button id="mybutton" variant="primary" type="submit">
+            Add
+          </Button>
+        </Stack>
       </Form.Group>
-        <p className="list"> SHOPPING LIST </p>
+      <p className="list"> LIST </p>
     </Form>
   );
 }
 
 function App() {
   const [todos, setTodos] = React.useState([
-    {
-      text: "It's an example", 
+   /*  {
+      text: "It's an example",
       isDone: false
-    }
+    } */
   ]);
 
   const addTodo = text => {
@@ -72,13 +72,14 @@ function App() {
   return (
     <div className="app" >
       <div className="container" key="value">
-        <h1 className="text-center" >To Do List</h1>
+        <h1 className="text-center" >Shopping List</h1>
+        <p className="by">by @Jeann11</p>
         <FormTodo addTodo={addTodo} />
         <div>
-          {todos.map((todo, index) => (
+          {todos.map((todos, index) => (
             <Card>
               <Card.Body>
-                <Todo key={index} index={index} todo={todo} markTodo={markTodo} deleteTodo={deleteTodo}
+                <Todo key={index} index={index} todo={todos} markTodo={markTodo} deleteTodo={deleteTodo}
                 />
               </Card.Body>
             </Card>
@@ -86,7 +87,12 @@ function App() {
         </div>
       </div>
     </div>
+
+
+
   );
+
+
 }
 
 export default App;

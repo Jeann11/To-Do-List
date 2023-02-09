@@ -1,12 +1,19 @@
-*{
-    background-color: rgb(163, 228, 231);
+head {
+  background-position: center;
+}
+
+body {
+    background-image: url(img/sean.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .app {
   padding: 40px;
-  background-color: rgb(163, 228, 231);
   font-style: italic;
   font-weight: 500;
+  background-position: center;
 }
 
 #text {
@@ -23,6 +30,7 @@
 
 .text-center {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: purple;
 }
 
 .list {
@@ -31,15 +39,20 @@
   font-style: italic;
   font-weight: bold;
   padding-top: 15px;
+  color: purple;
 }
 
 #mybutton {
-  background-color: brown;
+  background-color: purple;
   font-size: 15px;
 }
 
 #addtext {
   font-size: 15px;
-  color: rgb(36, 35, 35);
+  color: purple;
+  text-align: center;
+}
+
+.by {
   text-align: center;
 }
