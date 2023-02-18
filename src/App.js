@@ -1,22 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Todo from "./Component/Todo";
 import List from "./Component/List";
 import Card from 'react-bootstrap/Card';
+import { Form, FormControl, Button } from "react-bootstrap";
+
 
 
 
 function App() {
-  const [todos, setTodos] = React.useState([
-    /*  {
-       text: "It's an example",
-       isDone: false
-     }  */
-  ]);
+  const [hidden, setHidden] = useState(true);
+  const [todos, setTodos] = React.useState([]);
+  const [todoUpDate, setTodoUpDate] = useState("");
+  const [currentTodoIndex, setCurrentTodoIndex] = useState(0);
 
-  const addTodo = text => {
+  const addTodo = (text) => {
     const newTodos = [...todos, { text }];
     setTodos(newTodos);
+  };
+
+  const editTodo = (index, newtext) => {
+    setHidden(false)
+    setTodoUpDate(newtext)
+    setCurrentTodoIndex(index)
+  };
+
+  const handleInputChange = (value) => {
+    setTodoUpDate(value);
+  };
+
+  const updateTodo = () => {
+    const newTodos = todos.map( (todo,i) => {
+      if (i === currentTodoIndex) {
+        // const data = { text: todoUpDate}
+        todo.text = todoUpDate;
+        return todo;
+      } else {
+        return todo;
+      }
+    })
+    setTodos(newTodos);
+    setHidden(true);
+    setTodoUpDate("");
+    setCurrentTodoIndex(0);
   };
 
   const markTodo = index => {
@@ -33,24 +59,29 @@ function App() {
 
   return (
     <div className="app" >
-      <div className="container" key="value">
+      <div className="container" >
         <h1 className="text-center" >Shopping List</h1>
         <p className="by">by @Jeann11</p>
         <div className="d-flex justify-content-center">
           <List addTodo={addTodo} />
         </div>
-        <div class="card" className="w-50">
-          {todos.map((todos, index) => (
-            <Card>
+        {!hidden ?
+          <Form>
+            <FormControl size="sm" type="text" placeholder="change your text" defaultValue={todoUpDate} onChange={ e => {handleInputChange(e.target.value)}}/>
+            <Button variant="outline-success" onClick={updateTodo}>⟲</Button>{''}
+          </Form> : <form hidden></form>}
+        <div className="card w-50">
+          {todos.map((todo, index) => (
+            <Card key={index}>
               <Card.Body>
-                <Todo key={index} index={index} todo={todos} markTodo={markTodo} deleteTodo={deleteTodo}
+                <Todo index={index} todo={todo} editTodo={editTodo} markTodo={markTodo} deleteTodo={deleteTodo}
                 />
               </Card.Body>
             </Card>
           ))}
         </div>
       </div>
-    </div>
+    </div >
 
   );
 }
